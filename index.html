@@ -34,7 +34,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
+            overflow-x: hidden;
             position: relative;
         }
 
@@ -71,7 +71,7 @@
             -webkit-backdrop-filter: blur(20px);
             border-radius: 24px;
             padding: 4rem 3rem;
-            max-width: 500px;
+            max-width: 550px;
             width: 90%;
             text-align: center;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25), 0 5px 15px rgba(0, 0, 0, 0.15);
@@ -100,13 +100,22 @@
             word-break: keep-all;
         }
 
-        /* Multicolor Hover Button - Styled with Soft Grey base */
+        /* Button Group Container */
+        .btn-group {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* Primary Multicolor Hover Button */
         .btn-multicolor {
             background: #e5e7eb; /* Soft Grey Background */
             color: #3f5A62;      /* Slate Teal Text for contrast and theme consistency */
             border: none;
-            padding: 1.1rem 2.8rem;
-            font-size: 1.1rem;
+            padding: 1.1rem 2.5rem;
+            font-size: 1.05rem;
             font-weight: 700;
             border-radius: 50px;
             cursor: pointer;
@@ -114,7 +123,7 @@
             z-index: 1;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             outline: none;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -155,7 +164,7 @@
         /* Hover animations and states */
         .btn-multicolor:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
             color: #3f5A62;
         }
 
@@ -169,7 +178,36 @@
             animation: multicolor-flow 5s linear infinite;
         }
 
-        .btn-multicolor:active {
+        /* Secondary Action Button - Styled with Coral Border Outline */
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-main);
+            border: 2px solid var(--accent-color);
+            padding: 1rem 2.4rem;
+            font-size: 1.05rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            outline: none;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(254, 130, 84, 0.35);
+        }
+
+        /* Active click states */
+        .btn-multicolor:active, .btn-secondary:active {
             transform: translateY(-1px);
         }
 
@@ -195,7 +233,10 @@
         <p class="desc">
             새로운 정보 기술을 탐구하고 직관적이며 현대적인 디자인을 설계하는 크리에이티브 웹 개발자입니다. 항상 사용자 관점에서 가치 있는 웹 환경을 제공하기 위해 노력하고 있습니다.
         </p>
-        <button class="btn-multicolor" onclick="alert('방문해 주셔서 감사합니다! 🚀')">인사 나누기</button>
+        <div class="btn-group">
+            <button class="btn-multicolor" onclick="alert('방문해 주셔서 감사합니다! 🚀')">인사 나누기</button>
+            <a href="mailto:soogeom@example.com" class="btn-secondary">이메일 보내기</a>
+        </div>
     </div>
 </body>
 </html>
